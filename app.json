@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "PrankApp",
-    "slug": "PrankApp",
+    "slug": "prank-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -19,10 +19,17 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.munemh.prankapp"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "ded47147-16f2-4978-9f77-e7f6b84a2d6b"
+      }
+    },
+    "owner": "munemh"
   }
 }
