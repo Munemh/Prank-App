@@ -14,8 +14,8 @@ export async function signUp(email: string, password: string, name: string): Pro
     console.log('Account created:', user);
 
     await databases.createDocument(
-      process.env.DATABASE_ID,
-      process.env.COLLECTION_ID,
+      process.env.EXPO_PUBLIC_DATABASE_ID,
+      process.env.EXPO_PUBLIC_COLLECTION_ID,
       ID.unique(),
       {
         userId: user.$id,

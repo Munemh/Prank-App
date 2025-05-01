@@ -22,7 +22,7 @@ const AboutScreen = () => {
       <Text style={styles.subHeader}>How to Demo and Test the Prank</Text>
       <Text style={styles.paragraph}>
         1. Sign Up or Login to the app.{'\n'}
-        2. Trigger the prank by pressing the "Start Pranking" button.{'\n'}
+        2. Trigger the prank by pressing the "Trigger Pranking" button.{'\n'}
         3. Watch as ghost touches and screen crack effects surprise you!
       </Text>
 
