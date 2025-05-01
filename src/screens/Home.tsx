@@ -1,16 +1,19 @@
 import React, { useState } from 'react';
-import { View, Text, Button, StyleSheet, Image, Alert } from 'react-native';
+import { View, Text, StyleSheet, Image, Alert } from 'react-native';
 import { createPrankEvent } from '../services/prankService';
+import AboutScreen from './About';
+import Button from '../components/Button';
+import { logout } from '../services/authService';
 
-export function Home({ navigation }: any) {
+export function Home({ navigation, onLogoutSuccess }: any) {
   const [prankTriggered, setPrankTriggered] = useState(false);
 
   const triggerPrank = async () => {
     try {
       setPrankTriggered(true);
-      // Save prank event to DB
-      await createPrankEvent(true);
-      Alert.alert('Prank Triggered!', 'The screen crack effect has been simulated.');
+      navigation.navigate("Prank")
+      // await createPrankEvent(true);
+      // Alert.alert('Prank Triggered!', 'The screen crack effect has been simulated.');
     } catch (error) {
       Alert.alert('Error', 'Failed to trigger prank effect. Please try again.');
     }
@@ -19,13 +22,18 @@ export function Home({ navigation }: any) {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Welcome to the Prank App!</Text>
-      <Button title="Trigger Prank" onPress={triggerPrank} />
-      {prankTriggered && (
-        <Image
-          source={require('../assets/cracked-screen.png')} // Your cracked screen image here
-          style={styles.crackedScreen}
-        />
-      )}
+      <Button
+        title="Trigger Prank" onPress={triggerPrank}
+        width={200}
+        height={60}
+        backgroundColor="#28a745"
+        textStyle={{ fontSize: 18 }}
+      />
+      <Button title="About Screen" onPress={() => { navigation.navigate("About") }} style={{ margin: 10 }} />
+      <Button title="Logout" onPress={() => {
+        logout()
+        onLogoutSuccess?.()
+      }} style={{ margin: 10 }} />
     </View>
   );
 }
