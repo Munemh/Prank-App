@@ -9,14 +9,6 @@
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
-    "plugins": [
-      [
-        "expo-av",
-        {
-          "microphonePermission": "Allow $(PRODUCT_NAME) to access your microphone."
-        }
-      ]
-    ],
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
